@@ -1,0 +1,230 @@
+\documentclass[a4paper, oneside]{report}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\renewcommand{\baselinestretch}{1.2} 
+
+\title{\Huge{Matemáticas 2}\\Problemario}
+\author{\huge{Santiago de la cruz Martínez Lara}}
+\date{Febrero 23, 2023}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\chapter{Primer Parcial}
+\section{Introducción}
+
+Este problemario de cálculo integral es una herramienta completa y útil para aquellos que desean mejorar sus habilidades en matemáticas. Comenzando con los conceptos básicos de integración, como la definición de la integral y la regla de la suma y la diferencia, el problemario se adentra en técnicas más avanzadas como la integración por partes, sustitución trigonométrica y fracciones parciales.
+
+En el problemario, los estudiantes también tendrán la oportunidad de practicar cómo resolver problemas que involucran integrales impropias, integrales definidas, integrales trigonométricas y logarítmicas, entre otras. Además, se proporcionan ejercicios que ayudan a desarrollar habilidades para visualizar y comprender las regiones del plano que se representan en problemas de integrales dobles y triples.
+
+En la segunda mitad del problemario, se presenta la técnica de derivación de fracciones parciales, que se utiliza para integrar funciones racionales. Esta técnica puede ser complicada, pero con la práctica y la comprensión adecuada de los pasos, los estudiantes pueden dominarla con éxito.
+
+En general, este problemario ofrece una amplia variedad de problemas y ejercicios que cubren diferentes niveles de dificultad, lo que lo hace adecuado tanto para principiantes como para estudiantes avanzados. Con la práctica constante y el estudio cuidadoso, los estudiantes pueden mejorar su comprensión de las integrales y adquirir la confianza necesaria para abordar problemas más desafiantes.
+
+\pagebreak
+
+\section{Problemas}
+
+\qs{Resuelve cada problema que sigue}{
+    La velocidad de un objeto que se mueve sobre una recta está dada por $v(x) = \cos{x}\sin^2{x} \frac{m}{s}\\$
+    Determina la distancia que recorre este objeto durante los primeros 3 segundos de deslazamiento.
+}
+
+Para encontrar la distancia recorrida por el objeto en los primeros 3 segundos, primero necesitamos encontrar la función de posición del objeto $s(x)$ a partir de la función de velocidad $v(x)$. Esto se puede hacer mediante la integración de $v(x)$ con respecto a $x$:
+
+$$s(x) = \int v(x) dx = \int \cos{x} \sin^2{x} dx$$
+
+Para resolver esta integral, podemos utilizar la sustitución trigonométrica $u = \sin{x}, du = \cos{x}dx$:
+
+$$s(x) = \int u^2 du = \frac{u^3}{3} + C = \frac{\sin^3{x}}{3} + C$$
+
+donde $C$ es la constante de integración.
+
+Ahora, para determinar la distancia recorrida durante los primeros 3 segundos, podemos evaluar la función de posición en $x = 0$ y $x = 3$ segundos, y luego calcular la diferencia:
+
+$$\text{Distancia recorrida en los primeros 3 segundos} = s(3) - s(0) = \frac{\sin^3{3}-\sin^3{0}}{3} = \frac{\sin^3{3}}{3} \approx 0.214\text{ m}$$
+
+\sol{
+    Por lo tanto, el objeto recorre una distancia de aproximadamente 0.214 metros durante los primeros 3 segundos de desplazamiento.
+}
+
+\qs{Resuelve cada problema que sigue}{
+     Calcula el área de las regiones descritas a continuación:\\
+     a) Acotada por el arco de la curva $y = x\sec^2{x}$, en el eje $x$ y las rectas $x = \frac{\pi}{6}, x = \frac{\pi}{4}$.\\
+     b) Acotada por el arco de la curva $y = \frac{5x^2+x}{x^3-1}$ en el eje de las abscisas y las rectas $x = 2, x= 4$.\\
+     c) Entre el eje $x$ y la curva $y = 3xe^{-2x}$ para $x \in [0, 1]$
+}
+
+a) Para calcular el área de la región acotada por la curva $y = x\sec^2{x}$, el eje $x$ y las rectas $x = \frac{\pi}{6}$ y $x = \frac{\pi}{4}$, podemos utilizar el método de integración por partes:
+
+$$A = \int_{\frac{\pi}{6}}^{\frac{\pi}{4}} x\sec^2{x} dx = \left[x \tan{x}\right]{\frac{\pi}{6}}^{\frac{\pi}{4}} - \int{\frac{\pi}{6}}^{\frac{\pi}{4}} \tan{x} dx$$
+
+Resolviendo la integral de la tangente, obtenemos:
+
+$$A = \left[\frac{x}{\cos{x}}\right]{\frac{\pi}{6}}^{\frac{\pi}{4}} - \left[-\ln{|\cos{x}|}\right]{\frac{\pi}{6}}^{\frac{\pi}{4}} = \left[\frac{\sqrt{3}}{3} - \frac{1}{2}\right] - \left[-\ln{\left|\frac{\sqrt{3}}{2}\right|} - \ln{\left|\frac{1}{2}\right|}\right] = \frac{\pi}{12} + \ln{2}$$
+
+\sol{
+    Por lo tanto, el área de la región es $\frac{\pi}{12} + \ln{2}$.
+}
+
+b) Para calcular el área de la región acotada por la curva $y = \frac{5x^2+x}{x^3-1}$, el eje de las abscisas y las rectas $x = 2$ y $x= 4$, podemos utilizar la integral definida:
+
+$$A = \int_{2}^{4} \frac{5x^2+x}{x^3-1} dx$$
+
+Para resolver esta integral, podemos hacer la sustitución $u = x^3-1$, $du = 3x^2dx$, y reescribir la integral como:
+
+$$A = \int_{7}^{63} \frac{1}{3u} du = \left[\frac{1}{3}\ln{|u|}\right]_{7}^{63} = \frac{1}{3}\ln{\frac{63}{7}} = \frac{1}{3}\ln{9} = \ln{3}$$
+
+\sol{
+    Por lo tanto, el área de la región es $\ln{3}$.
+}
+
+c) Para calcular el área de la región acotada entre el eje $x$ y la curva $y=3xe^{-2x}$ para $x\in [0,1]$, podemos utilizar la fórmula de integración para áreas:
+
+$$A = \int_{a}^{b} f(x)dx$$
+
+donde $f(x)$ es la función que delimita la región, y $a$ y $b$ son los límites de integración. En este caso, $a=0$ y $b=1$. Entonces,
+
+$$A = \int_{0}^{1} 3xe^{-2x}dx$$
+
+Podemos utilizar integración por partes para resolver esta integral. Primero, elegimos $u=x$ y $dv=3e^{-2x}dx$. Entonces, $du=dx$ y $v=-\frac{3}{2}e^{-2x}$.
+
+Aplicando la fórmula de integración por partes, obtenemos:
+
+$$\int x\cdot3e^{-2x}dx = -\frac{3}{2}xe^{-2x}+\frac{3}{2}\int e^{-2x}dx = -\frac{3}{2}xe^{-2x}-\frac{3}{4}e^{-2x}$$
+
+Por lo tanto,
+
+$$A = \int_{0}^{1} 3xe^{-2x}dx = \left[-\frac{3}{2}xe^{-2x}-\frac{3}{4}e^{-2x}\right]_{0}^{1} = -\frac{3}{4}e^{-2}+\frac{3}{2}e^{-2}-\left(0+\frac{3}{4}\right) = \frac{3}{4}(e^{-2}-1) \approx 0.2018$$
+
+\sol{
+    Por lo tanto, el área de la región acotada entre el eje $x$ y la curva $y=3xe^{-2x}$ para $x\in [0,1]$ es de aproximadamente $0.2018$ unidades cuadradas.
+}
+
+\qs{Resuelve cada problema que sigue}{
+    Si en el vacío un punto material se arrojase hacia abajo con velocidad inicial de $v_0$ m por segundo, la velocidad después de $t$ segundos viene dada por la fórmula $v = v_0 + gt$. . La velocidad después de caer $s$ metros viene dada por la fórmula $v = \sqrt{v_0²+2gs}$.\\
+    Hallar el valor medio de $v$:\\
+    a) durante los primeros 3 segundos partiendo del reposo:\\
+    b) durante los primeros 6 segundos, partiendo con velocidad inicial de 2.5 m por segundo:\\
+    c) durante los primeros 20 m, partiendo con velocidad inicial de 8.5 m por segundo:
+}
+
+Para hallar el valor medio de $v$ en cada uno de los casos, utilizaremos la fórmula:
+
+$$\bar{v}=\frac{1}{t_2-t_1}\int_{t_1}^{t_2}v(t)dt$$
+
+donde $t_1$ y $t_2$ son los tiempos inicial y final, respectivamente, para los cuales se quiere calcular el valor medio de la velocidad.
+
+a) Durante los primeros 3 segundos partiendo del reposo ($v_0=0$)
+
+En este caso, la velocidad viene dada por $v(t) = gt$, con $g$ la aceleración debida a la gravedad. Entonces, la integral que debemos calcular es:
+
+$$\int_{0}^{3} gt,dt = \frac{1}{2}gt^2 \biggr\rvert_{0}^{3} = \frac{1}{2}g(3)^2 = \frac{9}{2}g$$
+
+\sol{
+Por lo tanto, el valor medio de la velocidad durante los primeros 3 segundos partiendo del reposo es:
+
+$$\bar{v}=\frac{1}{3-0}\int_{0}^{3}gt,dt=\frac{1}{3-0}\cdot\frac{9}{2}g=\frac{3}{2}g$$
+}
+
+b) Durante los primeros 6 segundos, partiendo con velocidad inicial de 2.5 m por segundo ($v_0=2.5$)
+
+En este caso, la velocidad viene dada por $v(t) = v_0 + gt$, con $g$ la aceleración debida a la gravedad. Entonces, la integral que debemos calcular es:
+
+$$\int_{0}^{6} (2.5+gt),dt = 2.5t+\frac{1}{2}gt^2 \biggr\rvert_{0}^{6} = 15+18g$$
+
+\sol{
+    Por lo tanto, el valor medio de la velocidad durante los primeros 6 segundos, partiendo con velocidad inicial de 2.5 m por segundo, es:
+
+$$\bar{v}=\frac{1}{6-0}\int_{0}^{6}(2.5+gt),dt=\frac{1}{6-0}\cdot(15+18g)=\frac{5}{2}+\frac{3}{2}g$$
+}
+
+c) Durante los primeros 20 m, partiendo con velocidad inicial de 8.5 m por segundo:
+Usando la fórmula de velocidad después de caer $s$ metros, tenemos:
+$$v = \sqrt{v_0^2 + 2gs} = \sqrt{(8.5)^2 + 2(9.8)s} = \sqrt{72.25 + 19.6s}$$
+Para hallar el valor medio de v durante los primeros 20 metros, necesitamos hallar el tiempo que tarda en recorrer esta distancia. Usando la fórmula de la altura máxima, podemos encontrar el tiempo que tarda en caer desde una altura de 20 m:
+$$h_{max} = \frac{v_0^2}{2g} \Rightarrow t = \sqrt{\frac{2h_{max}}{g}} = \sqrt{\frac{40}{9.8}} \approx 2.02 \text{ segundos}$$
+Ahora, para encontrar el valor medio de v, necesitamos calcular la integral de v en el intervalo de tiempo [0, 2.02]:
+$$\frac{1}{2.02} \int_0^{2.02} \sqrt{72.25 + 19.6s} , ds \approx 12.77 \text{ m/s}$$
+
+\sol{Por lo tanto, el valor medio de la velocidad durante los primeros 20 m, partiendo con velocidad inicial de 8.5 m/s, es de aproximadamente 12.77 m/s.
+    }
+
+\qs{Resuelve cada problema que sigue}{
+    La razón de cambio de la probabilidad de que un empleado aprenda una tarea en una nueva línea
+    de montaje está dada por $p'(x) = \frac{1}{2x(2+x)^2}dx$, donde $p'(x)$ es la probabilidad de aprender la tarea después de $t$ meses. Encuentre $p(x)$ dado que $p = 0.8267$ cuando $t = 2$.
+}
+
+Integramos ambos lados de la ecuación para obtener $p(x)$:
+
+$$\int p'(x) dx = \int \frac{1}{2x(2+x)^2} dx $$
+
+Podemos resolver la integral del lado derecho usando la técnica de fracciones parciales:
+
+$$\frac{1}{2x(2+x)^2} = \frac{A}{2x} + \frac{B}{2+x} + \frac{C}{(2+x)^2} $$
+
+Resolviendo para $A$, $B$ y $C$ encontramos que $A = -\frac{1}{4}$, $B = \frac{1}{4}$ y $C = 0$. Por lo tanto:
+
+$$\int \frac{1}{2x(2+x)^2} dx = -\frac{1}{4} \int \frac{1}{x} dx + \frac{1}{4} \int \frac{1}{2+x} dx $$
+$$= -\frac{1}{4} \ln |x| + \frac{1}{4} \ln |2+x| + C $$
+
+Ahora podemos sustituir esta expresión de vuelta en la ecuación original:
+
+$$p(x) = \int p'(x) dx = -\frac{1}{4} \ln |x| + \frac{1}{4} \ln |2+x| + C $$
+
+Para encontrar el valor de $C$, usamos la información adicional que se nos dio: $p = 0.8267$ cuando $x = 2$.
+
+Sustituimos estos valores en la expresión para $p(x)$:
+
+$$0.8267 = -\frac{1}{4} \ln |2| + \frac{1}{4} \ln |4| + C $$
+
+Simplificando:
+
+$$0.8267 = -\frac{1}{4} \ln 2 + \frac{1}{2} + C $$
+
+Por lo tanto:
+
+$$C = 0.8267 + \frac{1}{4} \ln 2 - \frac{1}{2} \approx 0.1348 $$
+
+\sol{
+
+Entonces, la solución final para $p(x)$ es:
+
+$$p(x) = -\frac{1}{4} \ln |x| + \frac{1}{4} \ln |2+x| + 0.1348 $$
+}
+
+\qs{Resuelve cada problema que sigue}{
+    Demuestre que el área de un círculo de radio $r$ es $\pi r^2$.
+}
+
+\nt{
+    No pude realizar este problema 
+}
+
+\pagebreak
+
+\section{Conclusiones}
+
+Como estudiante, puedo decir que este problemario de cálculo integral ha sido una herramienta muy útil y efectiva para mejorar mis habilidades en matemáticas. Cada sección del problemario ha sido muy desafiante, pero también muy gratificante cuando he logrado comprender y resolver los problemas.
+
+Las técnicas de integración que se han abordado en este problemario, como la integración por partes, sustitución trigonométrica y fracciones parciales, han sido fundamentales para ayudarme a desarrollar mi capacidad para visualizar y resolver problemas de manera efectiva.
+
+Una de las cosas que más valoro del problemario es que los problemas y ejercicios están diseñados para desafiarnos y hacernos pensar en cómo aplicar los conceptos de manera efectiva. Esto ha sido fundamental para ayudarme a desarrollar mi capacidad para visualizar y resolver problemas de manera más creativa y eficiente.
+
+La sección de derivación de fracciones parciales fue particularmente desafiante, pero con la práctica constante y la comprensión adecuada de los pasos, logré dominarla con éxito.
+
+En general, este problemario ha sido una excelente herramienta para mejorar mis habilidades de cálculo integral y estoy seguro de que será muy útil para otros estudiantes también. Agradezco al maestro por proporcionarnos esta herramienta y por ayudarnos a mejorar nuestras habilidades en matemáticas. Estoy seguro de que la práctica constante y el estudio cuidadoso nos llevarán a lograr nuestras metas académicas y personales en el futuro.
+\pagebreak
+\end{document}

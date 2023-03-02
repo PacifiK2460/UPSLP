@@ -1,0 +1,89 @@
+\documentclass[a4paper, oneside]{report}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\renewcommand{\baselinestretch}{1.2} 
+
+\title{\Huge{Matemáticas 2}\\Problemario}
+\author{\huge{Santiago de la cruz Martínez Lara}}
+\date{Unknown XX, 2023}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\chapter{Segundo Parcial}
+\section{Regla de L'Hôpital}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{
+    $$\lim_{x \to 2}{\frac{5}{x^2+x-6} - \frac{1}{x-2}}$$
+}
+
+Al evaluar la función obtenemos el siguiente resultado:
+$$\frac{5}{0} - \frac{1}{0}$$
+Pero al no poderse aplicar la regla, tendremos que realiziar la operación antes de evaluar:
+$$\lim_{x \to 2}{\frac{5}{x^2+x-6} - \frac{1}{x-2}}\equiv \lim_{x\to 2}\frac{4x-x^2-4}{x^3-x^2-8x + 12} = \frac{0}{0}$$\\
+Siendo aplicable la Ley\\
+$$\lim_{x \to 2}\frac{4x-x^2-4}{x^3-x^2-8x + 12} \equiv \lim_{x \to 2}{\frac{-2x+4}{3x^2-2x-8}} = \frac{0}{0} \therefore \\
+\lim_{x \to 2}{\frac{-2x+4}{3x^2 -2x-8}} \equiv \lim_{x\to 2}{\frac{-2}{6x-2}} = -\frac{1}{5} $$
+
+\sol{
+    $$-\frac{1}{5}$$
+}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{
+    $$\lim_{x\to \frac{\pi}{2}}{\sec{x}-\tan{x}}$$
+}
+Debido a la naturaleza de estas funciones, obtenemos un valor indefinido al evaluar, por lo tanto tendremos que hacer alguna equivalencia:
+
+$$\lim_{x\to \frac{\pi}{2}}{\sec{x} - \tan{x}} \equiv \lim_{x\to \frac{\pi}{2}}{\frac{1-\sin{x}}{\cos{x}} = \frac{0}{0} \therefore \lim_{x\to \frac{\pi}{2}}{\frac{1-\sin{x}}{\cos{x}} \equiv \lim_{x\to \frac{\pi}{2}}{\frac{-\cos{x}}{-\sin{x}}}=\frac{0}{1} = 0   $$
+\\
+\sol{0}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{
+    $$\lim_{x\to 0}{\frac{\sin{5x}}{1-\cos{3x}}}$$
+}
+$$\lim_{x\to 0}{\frac{\sin{5x}}{1-\cos{3x}}} = \frac{0}{0} \therefore \equiv \lim_{x \to 0}{\frac{5\cos{5x}}{-\cos{3x}}}$$
+\sol{2}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
+1+1\\
+\sol{2}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
+1+1\\
+\sol{2}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
+1+1\\
+\sol{2}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
+1+1\\
+\sol{2}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
+1+1\\
+\sol{2}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
+1+1\\
+\sol{2}
+
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
+1+1\\
+\sol{2}
+
+
+\pagebreak
+\end{document}
