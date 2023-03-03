@@ -53,16 +53,29 @@ $$\lim_{x\to \frac{\pi}{2}}{\sec{x} - \tan{x}} \equiv \lim_{x\to \frac{\pi}{2}}{
 \qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{
     $$\lim_{x\to 0}{\frac{\sin{5x}}{1-\cos{3x}}}$$
 }
-$$\lim_{x\to 0}{\frac{\sin{5x}}{1-\cos{3x}}} = \frac{0}{0} \therefore \equiv \lim_{x \to 0}{\frac{5\cos{5x}}{-\cos{3x}}}$$
-\sol{2}
+$$\lim_{x\to 0}{\frac{\sin{5x}}{1-\cos{3x}}} = \frac{0}{0} \therefore \equiv \lim_{x \to 0}{\frac{5\cos{5x}}{-\cos{3x}}} = -\frac{5}{1} = -5$$
+\sol{-5}
 
-\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
-1+1\\
-\sol{2}
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{
+    $$\lim_{x \to 0}{(1+\sin{4x})^{\cot{x}}}$$
+}
+Al evaluar la ecuación en 0, obtenemos $1^{\frac{1}{0}}$, debido a que esta ecuación no representa una división, tendremos que resolverla mediante el uso del logaritmo:\\
+$$\lim_{x\to 0} \ln{y} = \cot{x}\times\ln{1+\sin{4x}}$$
+\\Ahora al evaluar obtenemos $\infty \times 0$, por lo que tendremos que reescribir la ecuación para poder realizar la Regla de L'Hôpital:\\
+$$\lim_{x\to 0}\ln{y} = \cot{x}\times\ln{1+\sin{4x}} \equiv \lim_{x\to 0}\ln{y}{\frac{\ln{1+\sin{4x}}}{\cot^{-1}{x}}} = \frac{1}{\frac{1}{0}}$$ $$\therefore$$ $$
+\lim_{x\to 0}\ln{y}{\frac{\ln{1+\sin{4x}}}{\cot^{-1}{x}}} \equiv \lim_{x\to 0}{\ln{y}} = \frac{4\cos{4x}+4x^2\cos{4x}}{1+\sin{4x}} = 4 \rightarrow e^{4} $$
+\sol{e^4}
 
-\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
-1+1\\
-\sol{2}
+\qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{
+    $$\lim_{x\to \frac{\pi}{2}}\frac{\tan{x}}{\tan{3x}}$$
+}
+Al evaluar la ecuación en $\frac{\pi}{2}$ obtenemos $\frac{0}{0}$, por lo que tendremos que descomponer la fracción:
+$$\lim_{x\to \frac{\pi}{2}} \frac{\sin{x}\cos{3x}}{\sin{3x}\cos{x}} = \frac{0}{0}$$
+$$\therefore$$
+$$\lim_{x\to \frac{\pi}{2}} \frac{\sin{x}\cos{3x}}{\sin{3x}\cos{x}} \equiv \lim_{x\to \frac{\pi}{2}}\frac{2(\sin{4x}-\sin{2x})}{2(\sin{4x}+\sin{2x})} = \frac{0}{0} $$
+$$\therefore $$
+$$\lim_{x\to \frac{\pi}{2}}\frac{2(\sin{4x}-\sin{2x})}{2(\sin{4x}+\sin{2x})} \equiv \lim_{x\to \frac{\pi}{2}}\frac{4\cos{4x}-2\cos{2x}}{4\cos{4x}+2\cos{2x}} = \frac{6}{2} = 3 $$
+\sol{3}
 
 \qs{Calcula el siguiente limite utilizando la Regla de L'Hôpital cuando sea necesario}{}
 1+1\\
